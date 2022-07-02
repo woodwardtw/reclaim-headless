@@ -26,7 +26,8 @@ function prefix_load_scripts() {
     wp_enqueue_script('luxon', 'https://watch.reclaimed.tech//js/luxon.js', array('new-jquery'), $version, $in_footer);     
     wp_enqueue_script('axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js', array('new-jquery', 'luxon'), $version, $in_footer); 
     wp_enqueue_script('reclaim-app', plugin_dir_url( __FILE__) . 'js/app.js', array('new-jquery', 'axios'), $version, $in_footer);     
-    wp_enqueue_style( 'reclaim-style', plugin_dir_url( __FILE__) . 'css/reclaim-app.css');
+    wp_enqueue_style( 'bulma-style', plugin_dir_url( __FILE__) . 'css/bulma.css');
+    wp_enqueue_style( 'reclaim-style', plugin_dir_url( __FILE__) . 'css/roadshow.css');
 }
 
 

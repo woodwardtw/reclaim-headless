@@ -1,0 +1,112 @@
+.is-horz-scrolling {
+  /* height: 80px;
+    margin-bottom: 20px; */
+  width: 100%;
+  overflow: auto;
+  /* height: 80px;
+  margin-bottom: 20px; */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* .is-scrolling::-webkit-scrollbar {
+  display: none;
+} */
+
+.is-horz-scrolling::-webkit-scrollbar-thumb,
+.is-horz-scrolling::-webkit-scrollbar-thumb:vertical {
+  height: 0.5em;
+  background-color: #aeaeae;
+  border-radius: 1em;
+}
+
+.is-horz-scrolling::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.is-min-width-300 {
+  min-width: 300px;
+}
+
+.is-min-height-250 {
+  min-height: 250px;
+}
+
+.line-clamp {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  position: relative;
+
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 !important;
+}
+.line-clamp:after {
+  content: "...";
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  display: block;
+  position: absolute;
+  height: calc(1em * 1.2);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 75%
+  );
+}
+@supports (-webkit-line-clamp: 1) {
+  .line-clamp:after {
+    display: none !important;
+  }
+}
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+  height: calc(1em * 1.2 * 1);
+}
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+  height: calc(1em * 1.2 * 2);
+}
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+  height: calc(1em * 1.2 * 3);
+}
+.line-clamp-4 {
+  -webkit-line-clamp: 4;
+  height: calc(1em * 1.2 * 4);
+}
+.line-clamp-5 {
+  -webkit-line-clamp: 5;
+  height: calc(1em * 1.2 * 5);
+}
+
+.is-bordered {
+  box-shadow: 0px 0px 0px 1px #dbdbdb !important;
+}
+
+.is-bordered-success {
+  box-shadow: 0px 0px 0px 1px #48c78e !important;
+}
+
+.is-bordered-info {
+  box-shadow: 0px 0px 0px 1px #3e8ed0 !important;
+}
+
+.is-bordered-transparent {
+  box-shadow: 0px 0px 0px 1px transparent !important;
+}
+
+.is-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.has-transition {
+  transition: all 0.25s ease-in-out;
+}
