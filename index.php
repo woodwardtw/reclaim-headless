@@ -15,9 +15,9 @@ Text Domain: my-toolset
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
-add_action('wp_enqueue_scripts', 'prefix_load_scripts');
+add_action('wp_enqueue_scripts', 'reclaim_headless_load_scripts');
 
-function prefix_load_scripts() {                           
+function reclaim_headless_load_scripts() {                           
     $version= '1.0'; 
     $in_footer = true;
      wp_enqueue_script('new-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(''), '3.2.1', $in_footer); 
