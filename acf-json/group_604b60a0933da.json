@@ -1,0 +1,323 @@
+{
+    "key": "group_604b60a0933da",
+    "title": "Presentation",
+    "fields": [
+        {
+            "key": "field_604b60a7655e3",
+            "label": "Date",
+            "name": "presentation_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "m\/d\/Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_604b60ba655e4",
+            "label": "Start Time",
+            "name": "time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "H:i:s",
+            "return_format": "g:i a"
+        },
+        {
+            "key": "field_6059db1863779",
+            "label": "Duration",
+            "name": "duration",
+            "type": "number",
+            "instructions": "Number in minutes",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_604f6fc0d2545",
+            "label": "Presentation Track",
+            "name": "presentation_track",
+            "type": "checkbox",
+            "instructions": "Choose \"All Tracks\" for keynotes, breaks, pre-conf workshops, or any other presentation that slots across all tracks",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Track 1 - Leadership and digital and physical spaces": "Track 1 - Leadership and digital and physical spaces",
+                "Track 2 - Inclusive practice and digital wellbeing": "Track 2 - Inclusive practice and digital wellbeing",
+                "Track 3 - Wildcard": "Track 3 - Wildcard",
+                "All Tracks": "All Tracks"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_604f6f78d0ed6",
+            "label": "Presentation Type",
+            "name": "presentation_type",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "YouTube Live Presentation": "YouTube Live Presentation",
+                "YouTube Pre-recorded Presentation": "YouTube Pre-recorded Presentation",
+                "ALT Presentation\/Gathering\/Socia": "ALT Presentation\/Gathering\/Socia",
+                "Break": "Break"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "Presentation",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_604b60fc1de05",
+            "label": "Speakers",
+            "name": "speakers",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "speaker"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_60708fb5284b6",
+            "label": "Session Chair(s)",
+            "name": "session_chair",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "speaker"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_604f705f7068a",
+            "label": "Session Description",
+            "name": "session_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6064d851b83d1",
+            "label": "YouTube ID",
+            "name": "youtube_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "==",
+                        "value": "YouTube Live Presentation"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "==",
+                        "value": "YouTube Pre-recorded Presentation"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6071d0bd80d3f",
+            "label": "Chat",
+            "name": "",
+            "type": "text",
+            "instructions": "Chat Youtube Live ID (no chat displayed if not chosen)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "==",
+                        "value": "YouTube Pre-recorded Presentation"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61054265a0b91",
+            "label": "Gathering Space URL",
+            "name": "gathering_space_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "==",
+                        "value": "ALT Presentation\/Gathering\/Socia"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "==",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "presentation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1627734889
+}
