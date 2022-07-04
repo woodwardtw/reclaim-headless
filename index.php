@@ -33,17 +33,17 @@ function reclaim_headless_load_scripts() {
 
 
 // UnderStrap's includes directory.
-$alt_conf_inc_dir = plugin_dir_path(__FILE__)  . 'inc';
+$reclaim_headless_inc_dir = plugin_dir_path(__FILE__)  . 'inc';
 
-$alt_conf_includes = array(
+$reclaim_headless_includes = array(
    '/custom-post-types.php',                          // Load custom post types and taxonomies
    '/acf.php'                          // Load custom post types and taxonomies
 );
 
 
 // Include files.
-foreach ( $alt_conf_includes as $file ) {
-   require_once $alt_conf_inc_dir . $file;
+foreach ( $reclaim_headless_includes as $file ) {
+   require_once $reclaim_headless_inc_dir . $file;
 }
 
 function acf_to_rest_api_presentation($response, $post, $request) {
@@ -78,7 +78,15 @@ if ( ! function_exists('write_log')) {
 //    return $data;
 // }, 10, 2 );
 
-   //save acf json
+
+function reclaim_headless_display_data(){
+   $template = include('template/content-base.php');
+}
+
+add_shortcode( 'display', 'reclaim_headless_display_data' );
+
+
+//save acf json
 add_filter('acf/settings/save_json', 'reclaim_headless_json_save_point');
  
 function reclaim_headless_json_save_point( $path ) {

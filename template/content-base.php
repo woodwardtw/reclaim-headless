@@ -1,32 +1,13 @@
 <?php
+/**
+ * The template for displaying conference information
+ *
+ * @package Understrap
+ */
+
 //base template
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form of Awesome - Reclaim EdTech</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://formofawesome.com/wp-content/uploads/2022/05/form_awesome.png"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="https://watch.reclaimed.tech/css/bulma.css" />
-    <link rel="stylesheet" href="https://watch.reclaimed.tech/css/roadshow.css" />
-    <link rel="stylesheet" href="https://watch.reclaimed.tech/css/taylor.css" />
-  </head>
   <body>
     <section class="hero is-fullheight">
       <!-- Hero head: will stick at the top -->
