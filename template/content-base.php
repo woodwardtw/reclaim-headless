@@ -97,10 +97,5 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
     </section>
     <div id="api_url_div" style="display: none;">https://roadshowwp.uk.reclaim.cloud/wp-json/wp/v2/presentation?per_page=99&categories=212</div>
     // <div id="placeholder_videoID_div" style="display: none;">5GULsZHVyv8</div>
-    // <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    // <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-    // <script src="https://watch.reclaimed.tech//js/luxon.js"></script>
-    // <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    // <script src="https://watch.reclaimed.tech//js/app.js"></script>
-  </body>
-</html>
+   
+

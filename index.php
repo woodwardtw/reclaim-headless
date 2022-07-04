@@ -20,9 +20,9 @@ add_action('wp_enqueue_scripts', 'reclaim_headless_load_scripts');
 function reclaim_headless_load_scripts() {                           
     $version= '1.0'; 
     $in_footer = true;
-     wp_enqueue_script('new-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(''), '3.2.1', $in_footer); 
+    wp_enqueue_script('new-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', '', '3.2.1', true); 
+    
     wp_enqueue_script('mousewheel', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js', array('new-jquery'), '3.1.13', $in_footer);     
-    wp_enqueue_script('mousewheel', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js', array('new-jquery'), '3.1.13', $in_footer);  
     wp_enqueue_script('luxon', 'https://watch.reclaimed.tech//js/luxon.js', array('new-jquery'), $version, $in_footer);     
     wp_enqueue_script('axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js', array('new-jquery', 'luxon'), $version, $in_footer); 
     wp_enqueue_script('reclaim-app', plugin_dir_url( __FILE__) . 'js/app.js', array('new-jquery', 'axios'), $version, $in_footer);     
