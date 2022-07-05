@@ -95,7 +95,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
         </div>
       </div>
     </section>
-    <div id="api_url_div" style="display: none;">https://roadshowwp.uk.reclaim.cloud/wp-json/wp/v2/presentation?per_page=99&categories=212</div>
-    // <div id="placeholder_videoID_div" style="display: none;">5GULsZHVyv8</div>
+    <div id="api_url_div"><?php echo site_url();?>/wp-json/wp/v2/presentation?per_page=99&categories=3</div>
+    <div id="placeholder_videoID_div" style="display: none;">5GULsZHVyv8</div>
    
 

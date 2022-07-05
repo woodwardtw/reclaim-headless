@@ -3,6 +3,51 @@
     "title": "Presentation",
     "fields": [
         {
+            "key": "field_604f6f6623eb2",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_604f6f78d0ed6",
+            "label": "Presentation Type",
+            "name": "presentation_type",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Alt-format": "Alt-format",
+                "Break": "Break",
+                "Day": "Day",
+                "Presentation": "Presentation"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "Presentation",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_604b60a7655e3",
             "label": "Date",
             "name": "presentation_date",
@@ -11,7 +56,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -21,14 +66,14 @@
         },
         {
             "key": "field_604b60ba655e4",
-            "label": "Start Time",
+            "label": "Time",
             "name": "time",
             "type": "time_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -40,11 +85,11 @@
             "label": "Duration",
             "name": "duration",
             "type": "number",
-            "instructions": "Number in minutes",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -55,58 +100,6 @@
             "min": "",
             "max": "",
             "step": ""
-        },
-        {
-            "key": "field_604f6fc0d2545",
-            "label": "Presentation Track",
-            "name": "presentation_track",
-            "type": "checkbox",
-            "instructions": "Choose \"All Tracks\" for keynotes, breaks, pre-conf workshops, or any other presentation that slots across all tracks",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Track 1 - Leadership and digital and physical spaces": "Track 1 - Leadership and digital and physical spaces",
-                "Track 2 - Inclusive practice and digital wellbeing": "Track 2 - Inclusive practice and digital wellbeing",
-                "Track 3 - Wildcard": "Track 3 - Wildcard",
-                "All Tracks": "All Tracks"
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value",
-            "save_custom": 0
-        },
-        {
-            "key": "field_604f6f78d0ed6",
-            "label": "Presentation Type",
-            "name": "presentation_type",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "YouTube Live Presentation": "YouTube Live Presentation",
-                "YouTube Pre-recorded Presentation": "YouTube Pre-recorded Presentation",
-                "ALT Presentation\/Gathering\/Socia": "ALT Presentation\/Gathering\/Socia",
-                "Break": "Break"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "Presentation",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
         },
         {
             "key": "field_604b60fc1de05",
@@ -120,12 +113,22 @@
                     {
                         "field": "field_604f6f78d0ed6",
                         "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
                         "value": "Break"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -139,14 +142,19 @@
             "ui": 1
         },
         {
-            "key": "field_60708fb5284b6",
-            "label": "Session Chair(s)",
-            "name": "session_chair",
-            "type": "post_object",
+            "key": "field_604f6fc0d2545",
+            "label": "Presentation Theme",
+            "name": "presentation_theme",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
                     {
                         "field": "field_604f6f78d0ed6",
                         "operator": "!=",
@@ -159,14 +167,93 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "speaker"
+            "choices": {
+                "Theme 1: Openness, care, and joy in the times of pandemic": "Theme 1: Openness, care, and joy in the times of pandemic",
+                "Theme 2: Open Education responses to surveillance technologies and data ownership in education": "Theme 2: Open Education responses to surveillance technologies and data ownership in education",
+                "Theme 3: Open in Action: open teaching, educational practices and resources, how you might be using Domains and other tools": "Theme 3: Open in Action: open teaching, educational practices and resources, how you might be using Domains and other tools",
+                "Theme 4: Shifts in agency and creativity as empowerment of learners and educators": "Theme 4: Shifts in agency and creativity as empowerment of learners and educators",
+                "Theme 5: Open Source Tools: infrastructure, cloud environments, targeted teaching tools": "Theme 5: Open Source Tools: infrastructure, cloud environments, targeted teaching tools",
+                "Theme 6: Wildcard": "Theme 6: Wildcard"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_604f6ff618ae7",
+            "label": "Keywords",
+            "name": "keywords",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
             ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 1,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
             "return_format": "object",
-            "ui": 1
+            "multiple": 0
+        },
+        {
+            "key": "field_604f7025d903a",
+            "label": "Channel",
+            "name": "channel",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "OER1": "OER1",
+                "OER2": "OER2",
+                "Domains21": "Domains21"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
         },
         {
             "key": "field_604f705f7068a",
@@ -177,6 +264,70 @@
             "required": 0,
             "conditional_logic": [
                 [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6064d851b83d1",
+            "label": "Session ID",
+            "name": "session_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6064d98bd3401",
+            "label": "Resources and References",
+            "name": "resources_and_references",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
                     {
                         "field": "field_604f6f78d0ed6",
                         "operator": "!=",
@@ -196,7 +347,141 @@
             "delay": 0
         },
         {
-            "key": "field_6064d851b83d1",
+            "key": "field_60708fb5284b6",
+            "label": "Session Chair",
+            "name": "session_chair",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60708fc9284b7",
+            "label": "Session Staff member",
+            "name": "session_staff_member",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6071d08980d3e",
+            "label": "Media",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This is where the media stuff gets sorted.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6072ec0a2808e",
+            "label": "Pick your media path",
+            "name": "pick_your_media_path",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "YoutubeLiveID": "YoutubeLiveID",
+                "YoutubeID": "YoutubeID",
+                "Discord OpenSpaces1": "Discord OpenSpaces1",
+                "Discord OpenSapces 2": "Discord OpenSapces 2",
+                "Discord OpenSpaces 3": "Discord OpenSpaces 3"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6063cdad51c3b",
             "label": "YouTube ID",
             "name": "youtube_id",
             "type": "text",
@@ -205,16 +490,60 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_604f6f78d0ed6",
+                        "field": "field_6072ec0a2808e",
                         "operator": "==",
-                        "value": "YouTube Live Presentation"
+                        "value": "YoutubeID"
                     }
                 ],
                 [
                     {
                         "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6072ed4240cb4",
+            "label": "YouTube Live ID",
+            "name": "youtube_live_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6072ec0a2808e",
                         "operator": "==",
-                        "value": "YouTube Pre-recorded Presentation"
+                        "value": "YoutubeLiveID"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
                     }
                 ]
             ],
@@ -233,48 +562,19 @@
             "key": "field_6071d0bd80d3f",
             "label": "Chat",
             "name": "",
-            "type": "text",
-            "instructions": "Chat Youtube Live ID (no chat displayed if not chosen)",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_604f6f78d0ed6",
-                        "operator": "==",
-                        "value": "YouTube Pre-recorded Presentation"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61054265a0b91",
-            "label": "Gathering Space URL",
-            "name": "gathering_space_url",
-            "type": "url",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
                         "field": "field_604f6f78d0ed6",
-                        "operator": "==",
-                        "value": "ALT Presentation\/Gathering\/Socia"
-                    }
-                ],
-                [
+                        "operator": "!=",
+                        "value": "Day"
+                    },
                     {
                         "field": "field_604f6f78d0ed6",
-                        "operator": "==",
+                        "operator": "!=",
                         "value": "Break"
                     }
                 ]
@@ -284,8 +584,48 @@
                 "class": "",
                 "id": ""
             },
+            "message": "This is where text gets sorted.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6071d0e280d40",
+            "label": "Choose your chat.",
+            "name": "choose_your_chat",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Day"
+                    },
+                    {
+                        "field": "field_604f6f78d0ed6",
+                        "operator": "!=",
+                        "value": "Break"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Domains21": "Domains21",
+                "Demo-track": "Demo-track",
+                "Hallway chats": "Hallway chats",
+                "Youtube chat": "Youtube chat"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
             "default_value": "",
-            "placeholder": ""
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -319,5 +659,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1627734889
+    "show_in_rest": false,
+    "modified": 1657019058
 }

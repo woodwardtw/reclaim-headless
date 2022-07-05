@@ -1,0 +1,850 @@
+[
+    {
+        "key": "group_604b60a0933da",
+        "title": "Presentation",
+        "fields": [
+            {
+                "key": "field_604f6f6623eb2",
+                "label": "Subtitle",
+                "name": "subtitle",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_604f6f78d0ed6",
+                "label": "Presentation Type",
+                "name": "presentation_type",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Alt-format": "Alt-format",
+                    "Break": "Break",
+                    "Day": "Day",
+                    "Presentation": "Presentation"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "Presentation",
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_604b60a7655e3",
+                "label": "Date",
+                "name": "presentation_date",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "m\/d\/Y",
+                "return_format": "m\/d\/Y",
+                "first_day": 1
+            },
+            {
+                "key": "field_604b60ba655e4",
+                "label": "Time",
+                "name": "time",
+                "type": "time_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "H:i:s",
+                "return_format": "g:i a"
+            },
+            {
+                "key": "field_6059db1863779",
+                "label": "Duration",
+                "name": "duration",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_604b60fc1de05",
+                "label": "Speakers",
+                "name": "speakers",
+                "type": "post_object",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "speaker"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "multiple": 1,
+                "return_format": "object",
+                "ui": 1
+            },
+            {
+                "key": "field_604f6fc0d2545",
+                "label": "Presentation Theme",
+                "name": "presentation_theme",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Theme 1: Openness, care, and joy in the times of pandemic": "Theme 1: Openness, care, and joy in the times of pandemic",
+                    "Theme 2: Open Education responses to surveillance technologies and data ownership in education": "Theme 2: Open Education responses to surveillance technologies and data ownership in education",
+                    "Theme 3: Open in Action: open teaching, educational practices and resources, how you might be using Domains and other tools": "Theme 3: Open in Action: open teaching, educational practices and resources, how you might be using Domains and other tools",
+                    "Theme 4: Shifts in agency and creativity as empowerment of learners and educators": "Theme 4: Shifts in agency and creativity as empowerment of learners and educators",
+                    "Theme 5: Open Source Tools: infrastructure, cloud environments, targeted teaching tools": "Theme 5: Open Source Tools: infrastructure, cloud environments, targeted teaching tools",
+                    "Theme 6: Wildcard": "Theme 6: Wildcard"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_604f6ff618ae7",
+                "label": "Keywords",
+                "name": "keywords",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "post_tag",
+                "field_type": "multi_select",
+                "allow_null": 1,
+                "add_term": 1,
+                "save_terms": 1,
+                "load_terms": 1,
+                "return_format": "object",
+                "multiple": 0
+            },
+            {
+                "key": "field_604f7025d903a",
+                "label": "Channel",
+                "name": "channel",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "OER1": "OER1",
+                    "OER2": "OER2",
+                    "Domains21": "Domains21"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_604f705f7068a",
+                "label": "Session Description",
+                "name": "session_description",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_6064d851b83d1",
+                "label": "Session ID",
+                "name": "session_id",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6064d98bd3401",
+                "label": "Resources and References",
+                "name": "resources_and_references",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_60708fb5284b6",
+                "label": "Session Chair",
+                "name": "session_chair",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_60708fc9284b7",
+                "label": "Session Staff member",
+                "name": "session_staff_member",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6071d08980d3e",
+                "label": "Media",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "This is where the media stuff gets sorted.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_6072ec0a2808e",
+                "label": "Pick your media path",
+                "name": "pick_your_media_path",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "YoutubeLiveID": "YoutubeLiveID",
+                    "YoutubeID": "YoutubeID",
+                    "Discord OpenSpaces1": "Discord OpenSpaces1",
+                    "Discord OpenSapces 2": "Discord OpenSapces 2",
+                    "Discord OpenSpaces 3": "Discord OpenSpaces 3"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "",
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_6063cdad51c3b",
+                "label": "YouTube ID",
+                "name": "youtube_id",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6072ec0a2808e",
+                            "operator": "==",
+                            "value": "YoutubeID"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6072ed4240cb4",
+                "label": "YouTube Live ID",
+                "name": "youtube_live_id",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6072ec0a2808e",
+                            "operator": "==",
+                            "value": "YoutubeLiveID"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6071d0bd80d3f",
+                "label": "Chat",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "This is where text gets sorted.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_6071d0e280d40",
+                "label": "Choose your chat.",
+                "name": "choose_your_chat",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Day"
+                        },
+                        {
+                            "field": "field_604f6f78d0ed6",
+                            "operator": "!=",
+                            "value": "Break"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Domains21": "Domains21",
+                    "Demo-track": "Demo-track",
+                    "Hallway chats": "Hallway chats",
+                    "Youtube chat": "Youtube chat"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "",
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "presentation"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "page_attributes",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_604b62237299e",
+        "title": "Speaker",
+        "fields": [
+            {
+                "key": "field_604f708cb0873",
+                "label": "First Name",
+                "name": "first_name",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_604f7094cf18a",
+                "label": "Last Name",
+                "name": "last_name",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_604f70a9c115d",
+                "label": "Email",
+                "name": "email",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_604f70b78cecb",
+                "label": "Country",
+                "name": "country",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Canada": "Canada",
+                    "United Kingdom": "United Kingdom",
+                    "United States": "United States"
+                },
+                "allow_null": 0,
+                "other_choice": 1,
+                "save_other_choice": 1,
+                "default_value": "",
+                "layout": "vertical",
+                "return_format": "value"
+            },
+            {
+                "key": "field_604f70e3b384a",
+                "label": "Affiliation",
+                "name": "affiliation",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_604b6237a721f",
+                "label": "Twitter",
+                "name": "twitter",
+                "type": "url",
+                "instructions": "Use the full Twitter URL",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_604b6229a721e",
+                "label": "Website",
+                "name": "website",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_604f7100e95b6",
+                "label": "Media Kit URL",
+                "name": "media_kit_url",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "speaker"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "page_attributes",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": "",
+        "modified": 1616512250
+    }
+]
