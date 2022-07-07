@@ -1,5 +1,8 @@
 var api_url_div = document.getElementById("api_url_div");
-var roadshowAPI = 'http://multisitetwo.local/headless/wp-json/wp/v2/presentation?per_page=99&categories=3';
+//var roadshowAPI = 'https://roadshowwp.uk.reclaim.cloud/wp-json/wp/v2/presentation?per_page=99&categories=212'
+//var roadshowAPI = 'http://multisitetwo.local/headless/wp-json/wp/v2/presentation?per_page=99&categories=3';
+
+var roadshowAPI = scriptParams.url;
 
 var placeholder_videoID_div = document.getElementById("placeholder_videoID_div");
 var placeholder_videoID = placeholder_videoID_div.textContent;
