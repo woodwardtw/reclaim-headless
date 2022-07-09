@@ -17,7 +17,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 add_action('wp_enqueue_scripts', 'reclaim_headless_load_scripts');
 
-function reclaim_headless_load_scripts() {                           
+function reclaim_headless_load_scripts() {  
+    global $post;
+    $post_id = $post->ID;                         
     $version= '1.0'; 
     $in_footer = true;
     wp_enqueue_script('new-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', '', '3.2.1', true); 
@@ -30,6 +32,8 @@ function reclaim_headless_load_scripts() {
      $script_params = array(
            /* examples */
            'url' => site_url() . '/wp-json/wp/v2/presentation?per_page=99',
+           'cats' => get_field('pick_the_categories', $post_id),
+           'videoId' => get_field('placeholder_video_id', $post_id),
            //'users' => array( 1, 20, 2049 )
        );
 
@@ -79,21 +83,16 @@ if ( ! function_exists('write_log')) {
    }
 }
 
-// add_filter( 'acf/rest_api/presentation/get_fields', function( $data, $response ) {
-//    if ( isset( $data['acf']['session_description'] ) ) {
-//       // my change here
-//       $data['acf']['session_description'] = apply_filters('wpautop', $data['acf']['session_description'] );
-//    }
 
-//    return $data;
-// }, 10, 2 );
-
+//SHORTCODE OPTION
 
 function reclaim_headless_display_data(){
    $template = include('template/content-base.php');
 }
 
 add_shortcode( 'display', 'reclaim_headless_display_data' );
+
+
 
 
 //save acf json

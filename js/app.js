@@ -1,12 +1,15 @@
-var api_url_div = document.getElementById("api_url_div");
+//var api_url_div = document.getElementById("api_url_div");
 //var roadshowAPI = 'https://roadshowwp.uk.reclaim.cloud/wp-json/wp/v2/presentation?per_page=99&categories=212'
 //var roadshowAPI = 'http://multisitetwo.local/headless/wp-json/wp/v2/presentation?per_page=99&categories=3';
 
-var roadshowAPI = scriptParams.url + '&categories=3';
-console.log(roadshowAPI);
+const cats = scriptParams.cats;
+// if(cats.length >0){
+//need to explode array 
+// }
+const roadshowAPI = scriptParams.url + '&categories=' + cats[0];
 
-var placeholder_videoID_div = document.getElementById("placeholder_videoID_div");
-var placeholder_videoID = placeholder_videoID_div.textContent;
+
+const placeholder_videoID = scriptParams.videoId;
 
 const DateTime = luxon.DateTime;
 const Duration = luxon.Duration;
