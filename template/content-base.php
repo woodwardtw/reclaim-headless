@@ -10,7 +10,6 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
 
 
-  <body>
     <section class="hero is-fullheight">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
@@ -20,7 +19,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
               <a class="navbar-item" href="https://reclaimed.tech/form-of-awesome/" target="_blank">
                 <img
                   class="mr-2"
-                  src="https://formofawesome.com/wp-content/uploads/2022/05/form_awesome.png"
+                  src="<?php echo get_field('icon');?>"
                   alt="Logo"
                 /><span
                   class="site-name is-size-12 is-uppercase has-text-weight-bold"

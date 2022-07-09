@@ -212,8 +212,8 @@ function reclaim_headless_add_template( $content ) {
     // Check if we're inside the main loop in a single Post.
     $post_type = get_post_type( $post->ID );
     if ( is_singular() && in_the_loop() && is_main_query() && $post_type == 'session') {
-        return $content . file_get_contents(plugin_dir_path(__FILE__) .'template/content-base.php');
-        //alt is return $content . include('template/content-base.php');
+        //return $content . file_get_contents(plugin_dir_path(__FILE__) .'template/content-base.php');
+        return $content . include('template/content-base.php');
     }
  
     return $content;

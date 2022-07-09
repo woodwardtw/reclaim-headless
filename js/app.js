@@ -1,7 +1,3 @@
-//var api_url_div = document.getElementById("api_url_div");
-//var roadshowAPI = 'https://roadshowwp.uk.reclaim.cloud/wp-json/wp/v2/presentation?per_page=99&categories=212'
-//var roadshowAPI = 'http://multisitetwo.local/headless/wp-json/wp/v2/presentation?per_page=99&categories=3';
-
 const cats = scriptParams.cats;
 // if(cats.length >0){
 //need to explode array 
