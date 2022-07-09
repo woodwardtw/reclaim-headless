@@ -6,7 +6,9 @@
  */
 
 //base template
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
+
 
   <body>
     <section class="hero is-fullheight">
@@ -97,4 +99,3 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
     </section>
     <div id="placeholder_videoID_div" style="display: none;">5GULsZHVyv8</div>
    
-
