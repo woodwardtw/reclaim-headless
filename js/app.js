@@ -3,7 +3,7 @@ const cats = scriptParams.cats;
 //need to explode array 
 // }
 const roadshowAPI = scriptParams.url + '&categories=' + cats[0];
-
+console.log(cats);
 
 const placeholder_videoID = scriptParams.videoId;
 
