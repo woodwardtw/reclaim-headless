@@ -8,7 +8,7 @@
 //base template
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
-
+<?php get_header();?>
 
     <section class="hero is-fullheight">
       <!-- Hero head: will stick at the top -->
@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                   alt="Logo"
                 /><span
                   class="site-name is-size-12 is-uppercase has-text-weight-bold"
-                  >Form of Awesome - Reclaim EdTech</span
+                  ><?php the_title();?></span
                 >
               </a>
               <span class="navbar-burger" data-target="navbarMenuHeroC">
@@ -76,7 +76,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                   class="has-ratio box p-0"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/5GULsZHVyv8?enablejsapi=1"
+                  src="https://www.youtube.com/embed/<?php the_field('placeholder_video_id');?>?enablejsapi=1"
                   title="Form of Awesome - Reclaim EdTech"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -87,7 +87,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
             <div class="column is-one-third">
               <iframe
                 class="has-ratio box p-0 is-bordered is-min-height-250"
-                src="https://titanembeds.com/embed/954008116800938044?theme=IceWyvern&defaultchannel=954421749712298024"                height="100%"
+                src="https://titanembeds.com/embed/954008116800938044?theme=IceWyvern&defaultchannel=<?php the_field('discord_channel_id')?>"    height="100%"
                 width="100%"
                 frameborder="0"
               ></iframe>
@@ -96,5 +96,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
         </div>
       </div>
     </section>
-    <div id="placeholder_videoID_div" style="display: none;">5GULsZHVyv8</div>
+
+    <?php get_footer();?>
    

@@ -205,7 +205,7 @@ function wp_menu_single($data) {
 
  //custom filter to add needed stuff to session custom post type
 
-add_filter( 'the_content', 'reclaim_headless_add_template', 1 );
+//add_filter( 'the_content', 'reclaim_headless_add_template', 1 );
  
 function reclaim_headless_add_template( $content ) {
    global $post;
@@ -213,12 +213,34 @@ function reclaim_headless_add_template( $content ) {
     $post_type = get_post_type( $post->ID );
     if ( is_singular() && in_the_loop() && is_main_query() && $post_type == 'session') {
         //return $content . file_get_contents(plugin_dir_path(__FILE__) .'template/content-base.php');
-        return $content . include('template/content-base.php');
+      ob_start(); // start buffering php output
+      include('template/content-base.php'); // output from child.php is buffered
+      $app = ob_get_contents(); // ob_get_content contains the buffered php output
+      ob_end_clean(); // remove the buffered php output
+        return $content . $app;
     }
  
     return $content;
 }
 
+
+/* Filter the single_template with our custom function*/
+add_filter('single_template', 'reclaim_headless_session');
+
+function reclaim_headless_session($single) {
+
+    global $post;
+
+    /* Checks for single template by post type */
+    if ( $post->post_type == 'session' ) {
+        if ( file_exists( plugin_dir_path(__FILE__) .'/template/content-base.php' ) ) {
+            return plugin_dir_path(__FILE__) . '/template/content-base.php';
+        }
+    }
+
+    return $single;
+
+}
 
 
 //CORS 

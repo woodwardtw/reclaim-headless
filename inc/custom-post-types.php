@@ -185,7 +185,7 @@ function create_session_cpt() {
     'description' => __( '', 'textdomain' ),
     'labels' => $labels,
     'menu_icon' => '',
-    'supports' => array('title', 'editor', 'revisions', 'author', 'trackbacks', 'custom-fields', 'thumbnail',),
+    'supports' => array('title', 'editor', 'revisions', 'author', 'trackbacks', 'custom-fields', 'thumbnail', 'page-attributes'),
     'taxonomies' => array('category', 'post_tag'),
     'public' => true,
     'show_ui' => true,
@@ -195,12 +195,12 @@ function create_session_cpt() {
     'show_in_nav_menus' => true,
     'can_export' => true,
     'has_archive' => true,
-    'hierarchical' => false,
+    'hierarchical' => true,
     'exclude_from_search' => false,
     'show_in_rest' => true,
     'publicly_queryable' => true,
-    'capability_type' => 'post',
-    'menu_icon' => 'dashicons-universal-access-alt',
+    'capability_type' => 'page',
+    'menu_icon' => 'dashicons-nametag',
   );
   register_post_type( 'session', $args );
   

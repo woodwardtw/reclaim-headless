@@ -159,7 +159,7 @@ const modal = {
     </section>
     <footer class="modal-card-foot has-background-white">
       <button data-target=${youtubeID} class="playerButton button is-danger is-uppercase">
-        <span class="material-icons mr-2"> play_circle_outline </span>
+        <span class="material-icons mr-2 play_circle_outline"> </span>
         Watch
       </button>
     </footer>
